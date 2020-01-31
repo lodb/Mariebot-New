@@ -12,7 +12,7 @@ class Config(object):
     MAPS_API = ""
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = 'postgres://iqyaggie:F8123aSpSxtbNhQUPB2Ox0yVurVs97pb@rajje.db.elephantsql.com:5432/iqyaggie'  # needed for any database modules
+    SQLALCHEMY_DATABASE_URI = 'postgres://lgoqztmj:3t3_8Xxvi9uE_1DfNBxed64I_yJ73SA1@otto.db.elephantsql.com:5432/lgoqztmj'
     MESSAGE_DUMP = None  # needed to make sure 'save from' messages persist
     LOAD = []
     NO_LOAD = ['translation', 'rss', 'sed', 'weather']

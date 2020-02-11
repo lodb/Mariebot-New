@@ -9,7 +9,7 @@ from telegram import error
 
 from tg_bot import DEL_CMDS, SUDO_USERS, WHITELIST_USERS
 
-from tg_bot.modules import languages
+#from tg_bot.modules import languages
 
 
 def send_message(message, text,  *args,**kwargs):

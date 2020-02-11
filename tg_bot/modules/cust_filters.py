@@ -52,13 +52,13 @@ def list_handlers(bot: Bot, update: Update):
     for keyword in all_handlers:
         entry = " - `{}`\n".format(escape_markdown(keyword))
         if len(entry) + len(filter_list) > telegram.MAX_MESSAGE_LENGTH:
-            update.effective_message.reply_text(filter_list, parse_mode=telegram.ParseMode.MARKDOWNV2)
+            update.effective_message.reply_text(filter_list, parse_mode=telegram.ParseMode.MARKDOWN)
             filter_list = entry
         else:
             filter_list += entry
 
     if not filter_list == BASIC_FILTER_STRING:
-        update.effective_message.reply_text(filter_list, parse_mode=telegram.ParseMode.MARKDOWNV2)
+        update.effective_message.reply_text(filter_list, parse_mode=telegram.ParseMode.MARKDOWN)
 
 
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
@@ -231,7 +231,7 @@ def reply_filter(bot: Bot, update: Update):
                     should_preview_disabled = False
 
                 try:
-                    message.reply_text(ad_filter + "\n" + filt.reply, parse_mode=ParseMode.MARKDOWNV2,
+                    message.reply_text(ad_filter + "\n" + filt.reply, parse_mode=ParseMode.MARKDOWN,
                                        disable_web_page_preview=should_preview_disabled,
                                        reply_markup=keyboard)
                 except BadRequest as excp:
@@ -240,7 +240,7 @@ def reply_filter(bot: Bot, update: Update):
                                            "doesn't support buttons for some protocols, such as tg://. Please try "
                                            "again, or ask in @MarieSupport for help.")
                     elif excp.message == "Reply message not found":
-                        bot.send_message(chat.id, filt.reply, parse_mode=ParseMode.MARKDOWNV2,
+                        bot.send_message(chat.id, filt.reply, parse_mode=ParseMode.MARKDOWN,
                                          disable_web_page_preview=True,
                                          reply_markup=keyboard)
                     else:

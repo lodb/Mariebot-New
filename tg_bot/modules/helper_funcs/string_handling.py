@@ -13,6 +13,8 @@ from telegram.utils.helpers import escape_markdown
 # match []() (markdown link)
 # else, escape *, _, `, and [
 MATCH_MD = re.compile(r'\*(.*?)\*|'
+                      r'~(.*?)~|'
+                      r'__*(.*?)__|'
                       r'_(.*?)_|'
                       r'`(.*?)`|'
                       r'(?<!\\)(\[.*?\])(\(.*?\))|'
